@@ -1,0 +1,421 @@
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #18bc9c;
+  --bg-color: #fdfdfd;
+  --text-color: #333;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--accent-color);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin: 30px 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filters button {
+  padding: 10px 20px;
+  border: none;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filters button:hover,
+.filters .active {
+  background: #1abc9c;
+  transform: scale(1.05);
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 0 20px 40px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 50px;
+  color: white;
+  padding: 0 30px;
+  transform: translateY(-50%);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* About/Contact Sections */
+.section1 {
+  padding: 60px 20px;
+  text-align: center;
+background: linear-gradient(to right, #f5faff, #eaf8f9);
+  margin-top: 30px;
+ 
+}
+.icon {
+    display: flex;
+  padding: 30px 20px;
+  text-align: center;
+  justify-content: center;
+  background: #f9f9f9;
+  background: linear-gradient(to right, #f5faff, #eaf8f9);
+  color: #2c3e50;
+}
+
+
+.section h2 {
+    justify-content: center;
+    text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.lightbox-title {
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: var(--primary-color);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    display: none;
+    padding: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Overlay styling */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 15px;
+  text-align: center;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.overlay p {
+  margin-bottom: 10px;
+}
+
+.view-btn {
+  background: #18bc9c;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.view-btn:hover {
+  background: #1abc9c;
+}
+
+
+
+  
+  
+  div.icon a i {
+    color: #000000;
+    font-size: 40px;
+  }
+  div.icon i:hover {
+    color: #001eff;
+  }
+  div.icon .linkedin {
+    padding-right: 30px;
+  }
+  div.icon .gmail {
+    padding-right: 30px;
+  }
+  div.icon .instragram {
+    padding-right: 30px;
+  }
+  div.icon .facebook {
+    padding-right: 30px;
+  }
+
+.section {
+  background: linear-gradient(to right, #f5faff, #eaf8f9);
+  padding: 80px 20px;
+  color: #2c3e50;
+  display: flex;
+  justify-content: center;
+}
+
+
+.about-container {
+  max-width: 1000px;
+  background: white;
+  border-radius: 20px;
+  padding: 50px 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.about-title {
+  font-size: 2.8rem;
+  color: #18bc9c;
+  margin-bottom: 20px;
+}
+
+.about-subtitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.about-features {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.about-features h3,
+.about-tech h3 {
+  font-size: 1.5rem;
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+.about-features ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.05rem;
+}
+
+.about-features ul li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.about-features ul li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  color: #18bc9c;
+}
+
+.about-tech {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2rem;
+  }
+  .about-subtitle {
+    font-size: 1.1rem;
+  }
+  .about-content,
+  .about-features,
+  .about-tech {
+    text-align: center;
+  }
+}
+
+
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

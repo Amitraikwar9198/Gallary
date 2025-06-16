@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Image Gallery</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">📸 Gallery</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle">&#9776;</div>
+  </nav>
+
+  <!-- Header & Filters -->
+  <header>
+    <h1>Image Gallery</h1>
+    <div class="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="nature">Nature</button>
+      <button data-filter="animals">Animals</button>
+      <button data-filter="architecture">Architecture</button>
+    </div>
+  </header>
+
+  <!-- Gallery -->
+  <main class="gallery" id="gallery">
+    <!-- Images inserted by JS -->
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="">
+    <div class="controls">
+      <span class="prev">&#10094;</span>
+      <span class="next">&#10095;</span>
+    </div>
+    <p class="lightbox-title"></p>
+  </div>
+
+  <!-- About & Contact -->
+  <section id="about" class="section">
+    
+    <div class="about-container">
+    <h2 class="about-title">✨ About Images</h2>
+    <p class="about-subtitle">
+      Welcome to <strong>Gallery</strong> — a visually immersive, fully responsive image gallery that transforms browsing into an experience.
+    </p>
+
+    <div class="about-content">
+      
+      <p>
+        Every image is presented with elegance using smooth transitions, interactive hover overlays, category-based filtering, and full-screen lightbox views — creating a gallery that feels alive and intuitive to navigate.
+      </p>
+      <p>
+        Whether you're an artist, a designer, a developer, or simply an admirer of beautiful visuals, this gallery offers an inspiring and technically refined showcase.
+      </p>
+    </div>
+
+    <div class="about-features">
+      <h3>🔧 Features You’ll Love</h3>
+      <ul>
+        <li>📁 Category-based filtering (Nature, Animals, Architecture)</li>
+        <li>💡 Hover overlays with dynamic captions</li>
+        <li>🖼️ Lightbox viewer with next/prev navigation</li>
+        <li>⚡ Optimized for performance and responsiveness</li>
+        <li>🎨 Clean, minimalist, modern design principles</li>
+      </ul>
+    </div>
+
+    <div class="about-tech">
+      <h3>🛠️ Built With</h3>
+      <p>
+        HTML5, CSS3 (Flexbox, Grid, Transitions), Vanilla JavaScript (DOM, Events), and Responsive Web Design techniques. External image APIs like <code>picsum.photos</code> make each visit unique.
+      </p>
+    </div>
+  </div>
+
+  </section>
+
+  <section id="contact" class="section1">
+    <h2 class="hello">Contacts</h2>
+    <div class="icon">
+        
+      <div class="linkedin">
+        <a href="https://www.linkedin.com/in/amit-raikwar-9789b7301?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_main">
+          <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+      </div>
+      <div class="gmail">
+        <a href="https://mail.google.com/mail/u/1/#inbox?compose=GTvVlcSKjRSzdNbjXnrHFFkMVxpHRgjBXJnvbdthBcnBVJtkWPBBKBdcgcTSPTbWXZSXZwVbGwsNx"
+          target="_main">
+          <i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </div>
+      <div class="instragram">
+        <a href="https://www.instagram.com/mr_.amit_kashyap?igsh=MTNoNWNibXcyZjFpdw==">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="facebook">
+        <a href="https://www.facebook.com/profile.php?id=61559569580593&mibextid=ZbWKwL">
+          <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <hr />
+  </footer>
+  </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
